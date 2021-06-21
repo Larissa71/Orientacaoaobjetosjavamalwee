@@ -16,6 +16,14 @@ import br.com.senai.produto.ProdutoController;
 		List<Pessoa> pessoas = new ArrayList<>();
 		List<Produto> produtos = new ArrayList<Produto>();
 		
+		Produto produto = new Produto(
+				"Abacate",
+				2.5,
+				35,
+				2.5 * 35
+				);
+		produtos.add(produto);
+		
 		PessoaController pessoaController = new PessoaController();
 		ProdutoController produtoConroller = new ProdutoController();
 		
@@ -44,6 +52,15 @@ import br.com.senai.produto.ProdutoController;
 					
 				case 5: 
 					produtoConroller.editarProduto(produtos);
+					break;
+				case 6:
+					produtoConroller.excluirProduto(produtos);
+					break;
+				case 7:
+					pessoaController.editarPessoa(pessoas);
+					break;
+				case 8: 
+					pessoaController.excluirPessoa(pessoas);
 					break;
 				case 9:
 					sair = true;

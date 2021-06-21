@@ -108,6 +108,7 @@ public class PessoaController {
 	   		if(pessoas.isEmpty() ) {
 	   			return null;
 	   		}
+	   		System.out.println("Informe o Id da pessoa para editar: ");
 	   		int idPessoa = tec.nextInt() - 1;
 	   		
 	   		System.out.println("1) Nome da pessoa");

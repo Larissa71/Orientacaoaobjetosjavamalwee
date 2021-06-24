@@ -4,17 +4,30 @@ package br.com.senai;
 	import java.util.ArrayList;
 	import java.util.List;
 
+import br.com.senai.loja.Venda;
+import br.com.senai.loja.VendaController;
 import br.com.senai.pessoa.Pessoa;
 import br.com.senai.pessoa.PessoaController;
 import br.com.senai.produto.Produto;
 import br.com.senai.produto.ProdutoController;
 	
 	public class ProgramaPrincipal {
-
+		
+		public void menu() {
+			System.out.println("\n---MENU PRINCIPAL---");
+			System.out.println("1) Chamar Pessoa");
+			System.out.println("2) Chamar Produto");
+			System.out.println("3) Chamar Vendas");
+			System.out.println("11) sair");
+			System.out.println("--------------------");
+		
+		}
 
 	public static void main(String[] args) {
 		List<Pessoa> pessoas = new ArrayList<>();
 		List<Produto> produtos = new ArrayList<Produto>();
+		List<Venda> vendas = new ArrayList<Venda>();
+
 		
 		Produto produto = new Produto(
 				"Abacate",
@@ -26,7 +39,7 @@ import br.com.senai.produto.ProdutoController;
 		
 		PessoaController pessoaController = new PessoaController();
 		ProdutoController produtoConroller = new ProdutoController();
-		
+		VendaController vendaController = new VendaController();
 		boolean sair = false;
 		
 		do {
@@ -43,26 +56,10 @@ import br.com.senai.produto.ProdutoController;
 					break;
 
 				case 3:
-					produtos.add(produtoConroller.cadastrarProduto());
-					break;
-					
-				case 4:
-					produtoConroller.listarProdutos(produtos);
-					break;
-					
-				case 5: 
-					produtoConroller.editarProduto(produtos);
-					break;
-				case 6:
-					produtoConroller.excluirProduto(produtos);
-					break;
-				case 7:
 					pessoaController.editarPessoa(pessoas);
-					break;
-				case 8: 
-					pessoaController.excluirPessoa(pessoas);
-					break;
-				case 9:
+					break;	
+					
+				case 11:
 					sair = true;
 					break;
 			default:

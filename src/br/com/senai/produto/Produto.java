@@ -3,29 +3,29 @@ package br.com.senai.produto;
 public class Produto {
 	
 	//ATRIBUTOS
-	private String nomeDoPrododuto;
+	private String nomeDoProduto;
 	private double valorUnitarioProduto;
-	private int quantidadeDoPrdoduto;
+	private int quantidadeDoProduto;
 	private double valorTotalDoProduto;
 	
 	//CONSTRUTOR
 	public Produto() {
 	}
 	
-	public Produto(String nomeDoPrdoduto, double valorUnitarioProduto, int quantidadeDoPrdoduto,
+	public Produto(String nomeDoProduto, double valorUnitarioProduto, int quantidadeDoProduto,
 			double valorTotalDoProduto) {
-		this.nomeDoPrododuto = nomeDoPrdoduto;
+		this.nomeDoProduto = nomeDoProduto;
 		this.valorUnitarioProduto = valorUnitarioProduto;
-		this.quantidadeDoPrdoduto = quantidadeDoPrdoduto;
+		this.quantidadeDoProduto = quantidadeDoProduto;
 		this.valorTotalDoProduto = valorTotalDoProduto;
 	}
 
 	//METODOS
-	public String getNomeDoPrdoduto() {
-		return nomeDoPrododuto;
+	public String getNomeDoProduto() {
+		return nomeDoProduto;
 	}
-	public void setNomeDoPrdoduto(String nomeDoPrdoduto) {
-		this.nomeDoPrododuto = nomeDoPrdoduto;
+	public void setNomeDoProduto(String nomeDoProduto) {
+		this.nomeDoProduto = nomeDoProduto;
 	}
 	public double getValorUnitarioProduto() {
 		return valorUnitarioProduto;
@@ -33,11 +33,11 @@ public class Produto {
 	public void setValorUnitarioProduto(double valorUnitarioProduto) {
 		this.valorUnitarioProduto = valorUnitarioProduto;
 	}
-	public int getQuantidadeDoPrdoduto() {
-		return quantidadeDoPrdoduto;
+	public int getQuantidadeDoProduto() {
+		return quantidadeDoProduto;
 	}
-	public void setQuantidadeDoPrdoduto(int quantidadeDoPrdoduto) {
-		this.quantidadeDoPrdoduto = quantidadeDoPrdoduto;
+	public void setQuantidadeDoProduto(int quantidadeDoProduto) {
+		this.quantidadeDoProduto = quantidadeDoProduto;
 	}
 	public double getValorTotalDoProduto() {
 		return valorTotalDoProduto;

@@ -18,26 +18,28 @@ public class ProdutoController {
 	}
 	public void menu() {
 		System.out.println("\n---MENU---");
-		System.out.println("3)cadastrar produto");
+		System.out.println("1)cadastrar produto");
+		System.out.println("2) Editar produto");
+		System.out.println("3) Excluir produto");
 		System.out.println("4) Listar produto cadastradas");
-		System.out.println("9)Sair do sistema");
+		System.out.println("5)Sair do sistema");
 		System.out.println("--------------------");
 	}	
-	
+
 	public Produto cadastrarProduto() {
 		Produto produto = new Produto();
 		
 		System.out.println("--- Cadastrar produto--- ");
 		System.out.print("Informe o nome do produto: ");
-		produto.setNomeDoPrdoduto(tec.next());
+		produto.setNomeDoProduto(tec.next());
 	
 		System.out.println("Informe o valor unitário do produto: ");
 		produto.setValorUnitarioProduto(tec.nextDouble());
 		
 		System.out.println("Informe a quantidade do produto: ");
-		produto.setQuantidadeDoPrdoduto(tec.nextInt());
+		produto.setQuantidadeDoProduto(tec.nextInt());
 		
-		produto.setValorTotalDoProduto(produto.getValorUnitarioProduto() * produto.getQuantidadeDoPrdoduto());
+		produto.setValorTotalDoProduto(produto.getValorUnitarioProduto() * produto.getQuantidadeDoProduto());
 		return produto;
 	}
 	   	public List<Produto> listarProdutos(List<Produto> produtos) {
@@ -52,9 +54,9 @@ public class ProdutoController {
 			for(int i = 0; i<produtos.size(); i++) {
 				System.out.printf("%2d |%10s | %13s | %20s | %10s|\n",
 				i + 1,
-				produtos.get(i).getNomeDoPrdoduto(),
+				produtos.get(i).getNomeDoProduto(),
 				produtos.get(i).getValorUnitarioProduto(),
-				produtos.get(i).getQuantidadeDoPrdoduto(),
+				produtos.get(i).getQuantidadeDoProduto(),
 				produtos.get(i).getValorTotalDoProduto());
 			}
 
@@ -80,9 +82,9 @@ public class ProdutoController {
 	   			case 1: 
 	   				System.out.println("--- Editar nome do Produto ---");
 	   				System.out.println("Informe o novo nome do produto: ");
-	   				produto.setNomeDoPrdoduto(tec.next());
+	   				produto.setNomeDoProduto(tec.next());
 	   				
-	   				produto.setQuantidadeDoPrdoduto(produtos.get(idProduto).getQuantidadeDoPrdoduto());
+	   				produto.setQuantidadeDoProduto(produtos.get(idProduto).getQuantidadeDoProduto());
 	   				produto.setValorUnitarioProduto(produtos.get(idProduto).getValorUnitarioProduto());
 	   				produto.setValorTotalDoProduto(produtos.get(idProduto).getValorTotalDoProduto());
 	   				
@@ -91,11 +93,11 @@ public class ProdutoController {
 	   			case 2:
 	   				System.out.println("--- Editar a quantidade de Produto ---");
 	   				System.out.println("Informe a nova quantidade: ");
-	   				produto.setQuantidadeDoPrdoduto(tec.nextInt());
+	   				produto.setQuantidadeDoProduto(tec.nextInt());
 	   				
-	   				produto.setQuantidadeDoPrdoduto(produtos.get(idProduto).getQuantidadeDoPrdoduto());
+	   				produto.setQuantidadeDoProduto(produtos.get(idProduto).getQuantidadeDoProduto());
 	   				produto.setValorUnitarioProduto(produtos.get(idProduto).getValorUnitarioProduto());
-	   				produto.setValorTotalDoProduto(produto.getValorUnitarioProduto() * produto.getQuantidadeDoPrdoduto());
+	   				produto.setValorTotalDoProduto(produto.getValorUnitarioProduto() * produto.getQuantidadeDoProduto());
 	   				
 	   				produtos.set(idProduto, produto);
 	   				
@@ -103,9 +105,9 @@ public class ProdutoController {
 	   			case 3:
 	   				System.out.println("--- Editar o valor uitário de produto ---");
 	   				System.out.println("Informe o valor unitario do produto: R$ ");
-	   				produto.setNomeDoPrdoduto(produtos.get(idProduto).getNomeDoPrdoduto());
-	   				produto.setQuantidadeDoPrdoduto(produtos.get(idProduto).getQuantidadeDoPrdoduto());
-	   				produto.setValorTotalDoProduto(produto.getValorUnitarioProduto() * produto.getQuantidadeDoPrdoduto());
+	   				produto.setNomeDoProduto(produtos.get(idProduto).getNomeDoProduto());
+	   				produto.setQuantidadeDoProduto(produtos.get(idProduto).getQuantidadeDoProduto());
+	   				produto.setValorTotalDoProduto(produto.getValorUnitarioProduto() * produto.getQuantidadeDoProduto());
 
 	   				produtos.set(idProduto, produto);	   				
                     break;

@@ -21,16 +21,12 @@ public class PessoaController {
 		System.out.println("\n---MENU---");
 		System.out.println("1) Cadastrar pessoa");
 		System.out.println("2) Listar pessoas cadastradas");
-		System.out.println("3) Cadastrar produtos");
-		System.out.println("4) Listar produtos cadastrados");
-		System.out.println("5) Editar produto");
-		System.out.println("6) Excluir produto");
-		System.out.println("7) Editar pessoas");
-		System.out.println("8) Excluir pessoas");
-		System.out.println("9) Sair do sistema");
+		System.out.println("3) Editar pessoas");
+		System.out.println("4) Excluir pessoas");
+		System.out.println("5) Sair do sistema");
 		System.out.println("--------------------");
-
 	}
+	
 	
 	public Pessoa cadastrarPessoa() {
 		Pessoa pessoa = new Pessoa();
@@ -83,7 +79,7 @@ public class PessoaController {
 					"Id", "Nome", "Ano", "Idade", "Altura", "Pais", "Estado", "Cidade", "Bairro","Rua", "Complemento", "Número" );
 			
 		for(int i = 0; i<pessoas.size(); i++) {
-			System.out.printf("| %2d |%20s | %5d | %5d | %6.2f| %10s | %15s | %15s | %15s | %20s | %11s | %6s ", 
+			System.out.printf("| %2d |%20s | %5d | %5d | %6.2f| %10s | %15s | %15s | %15s | %20s | %11s | %6s \n", 
 			i + 1,
 			pessoas.get(i).getNome(),
 			pessoas.get(i).getAnoDeNascimento(),
@@ -120,7 +116,8 @@ public class PessoaController {
 	   		System.out.println("7) Bairro");
 	   		System.out.println("8) Rua");
 	   		System.out.println("9) Complemento");
-	   		System.out.println("10) Número da casa");
+	   		System.out.println("10) Cadastrar venda");
+	   		System.out.println("11) Número da casa");
 
 	   		System.out.print("Informe o campo para ser editado:" );
 	   		int opcao = tec.nextInt();
@@ -302,6 +299,38 @@ public class PessoaController {
 	   			return;
 	   		}
 	   		
-	   		pessoas.remove(idPessoa);		
+	   		pessoas.remove(idPessoa);	
+	   		
+
+		do {
+			pessoaController.menu();
+			
+			int opcao = pessoaController.leopcao();
+			switch(opcao) {
+				case 1:
+					pessoas.add(pessoaController.cadastrarPessoa());
+					break;
+					
+				case 2:
+					pessoaController.listarPessoas(pessoas);
+					break;
+
+				case 3:
+					pessoaController.editarPessoa(pessoas);
+					break;	
+					
+				case 11:
+					sair = true;
+					break;
+			default:
+				System.out.println("Opção invalida! ");
+				break;
+			}
+			
+		}while(!sair);
+		
+		System.out.println("Sistema finalizado!");
 		}
+	}	
 }
+

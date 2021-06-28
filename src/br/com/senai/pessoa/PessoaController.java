@@ -17,16 +17,6 @@ public class PessoaController {
 		return tec.nextInt();
 	}
 	
-	public void menu() {
-		System.out.println("\n---MENU---");
-		System.out.println("1) Cadastrar pessoa");
-		System.out.println("2) Listar pessoas cadastradas");
-		System.out.println("3) Editar pessoas");
-		System.out.println("4) Excluir pessoas");
-		System.out.println("5) Sair do sistema");
-		System.out.println("--------------------");
-	}
-	
 	
 	public Pessoa cadastrarPessoa() {
 		Pessoa pessoa = new Pessoa();
@@ -297,28 +287,36 @@ public class PessoaController {
 	   		if(pessoas.size() <= idPessoa) {
 	   			System.out.println("Produto não cadastrado.");
 	   			return;
-	   		}
+	   		}pessoas.remove(idPessoa);	
 	   		
-	   		pessoas.remove(idPessoa);	
 	   		
-
-		do {
-			pessoaController.menu();
-			
-			int opcao = pessoaController.leopcao();
+	   		}public void menu1(List<Pessoa> pessoas) {
+	   				System.out.println("\n---MENU---");
+	   				System.out.println("1) Cadastrar pessoa");
+	   				System.out.println("2) Listar pessoas cadastradas");
+	   				System.out.println("3) Editar pessoas");
+	   				System.out.println("4) Excluir pessoas");
+	   				System.out.println("5) Sair do sistema");
+	   				System.out.println("--------------------");
+	   			
+			boolean sair = false;
+		do {			
+			int opcao = leopcao();
 			switch(opcao) {
 				case 1:
-					pessoas.add(pessoaController.cadastrarPessoa());
+					pessoas.add(cadastrarPessoa());
 					break;
 					
 				case 2:
-					pessoaController.listarPessoas(pessoas);
+					listarPessoas(pessoas);
 					break;
 
 				case 3:
-					pessoaController.editarPessoa(pessoas);
+					editarPessoa(pessoas);
 					break;	
-					
+				case 4:
+					excluirPessoa(pessoas);
+					break;
 				case 11:
 					sair = true;
 					break;
@@ -330,7 +328,8 @@ public class PessoaController {
 		}while(!sair);
 		
 		System.out.println("Sistema finalizado!");
-		}
+		
+		
 	}	
 }
 

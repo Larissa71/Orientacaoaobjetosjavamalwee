@@ -81,38 +81,29 @@ public class VendaController {
 		
 		return venda;
 	}
-	public void menu() {
+	public void menu3(List <Produto> produto ,List <Pessoa> pessoa ) {
 		System.out.println("\n---MENU---");
-		System.out.println("1) Excluir pessoas");
+		System.out.println("1) Cadatrar venda");
 		System.out.println("2) Listar vendas");
-		System.out.println("3) Sair do sistema");
+		System.out.println("11) Sair do sistema");
 		System.out.println("--------------------");
-	}
 	
-	do {
-		VendaController.menu();
-		
-		int opcao = VendaController.leopcao();
+		boolean sair = false;
+	
+		do {
+		int opcao = leOpcao();
 		switch(opcao) {
-	case 7:
-		produtos.add(produtoConroller.cadastrarProduto());
+	case 1:
+		vendas.add(cadastrarVenda( produto, pessoa));
 		break;
 	
-	case 4:
-		produtoConroller.listarProdutos(produtos);
+	case 2:
+		ListarVenda(produtos);
 		break;
-	
-	case 5: 
-		produtoConroller.editarProduto(produtos);
-		break;
-	case 6:
-		produtoConroller.excluirProduto(produtos);
-		break;
-	case 7:
-		pessoaController.editarPessoa(pessoas);
-		break;
-	case 8: 
-		pessoaController.excluirPessoa(pessoas);
-		break;
-
+		
+		}
+		}while (!sair);
+		System.out.println("Sistema finalizado!");
+	}
 }
+	

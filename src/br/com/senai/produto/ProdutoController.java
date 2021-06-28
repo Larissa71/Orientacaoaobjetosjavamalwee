@@ -2,6 +2,7 @@ package br.com.senai.produto;
 import java.util.List;
 import java.util.Scanner;
 
+
 import br.com.senai.pessoa.Pessoa;
 
 public class ProdutoController {
@@ -78,6 +79,8 @@ public class ProdutoController {
 	   		System.out.println("Informe o campo para ser editado:" );
 	   		int opcao = tec.nextInt();
 	   		
+	   		
+	   		
 	   		switch(opcao) {
 	   			case 1: 
 	   				System.out.println("--- Editar nome do Produto ---");
@@ -111,31 +114,63 @@ public class ProdutoController {
 
 	   				produtos.set(idProduto, produto);	   				
                     break;
+                    
+	   			case 4: 
+	   				
+	   				System.out.println("--- Excluir produto ---");
+	   				System.out.println("Informe o Idproduto: ");
+	   				
 	   			default:
 	   				System.out.println("opção inválida!");
 	   				break;
 	   		}
 	   	return produtos;	
  	}
-	   	public void excluirProduto(List <Produto> produtos) {
-	   		
-	   		listarProdutos(produtos);
-	   		
-	   		if(produtos.isEmpty()) {
-	   			return;
-	   		}
-	   		System.out.println("--- EXCLUIR PRODUTO ---");
-	   		
-	   		System.out.println("Informe o Id do produto para exluir: ");
-	   		int idProduto = tec.nextInt() - 1;
-	   		
-	   		if(produtos.size() <= idProduto) {
-	   			System.out.println("Produto não cadastrado.");
-	   			return;
-	   		}
-	   		
-	   		produtos.remove(idProduto);
-	   	}
-}
 
+	public void excluirProduto(List<Produto> produtos) { 
+		listarProdutos(produtos);
+		if(produtos.isEmpty()) {
+			return;
+		}
+		System.out.println("INforme o Id: ");
+		int idProduto = tec.nextInt()-1;
+		if(produtos.size() <= idProduto );
+		
+		}
+	   	public void menu2(List <Produto> produtos) {  		
+			System.out.println("1) Cadastrar produto");
+			System.out.println("2) Listar Produto");
+			System.out.println("3) Editar produto");
+			System.out.println("4) Excluir produto");
+			System.out.println("11) Sair do sistema");
+			System.out.println("--------------------");
+		
+		boolean sair = false;
+		
+		do {
+			int opcao = leopcao();
+			switch(opcao) {
+		case 1:
+			produtos.add(cadastrarProduto());
+			break;
+		
+		case 2:
+			listarProdutos(produtos);
+			break;
+		
+		case 3: 
+			editarProduto(produtos);
+			break;
+		case 4:
+			excluirProduto(produtos);
+			break;
+			
+			}
+			
+			}while (!sair);
+			System.out.println("Sistema finalizado!");
+		
+	}
+	   		
+}
 
